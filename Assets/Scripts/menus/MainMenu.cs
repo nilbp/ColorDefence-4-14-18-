@@ -21,25 +21,32 @@ public class MainMenu : MonoBehaviour {
 		SceneManager.LoadScene (lvlSelector);
 
 	}
-	public void tutorial(string Nil_Level){
+	public void tutorial(string tutorial){
 
-		SceneManager.LoadScene (Nil_Level);
+		SceneManager.LoadScene (tutorial);
 		FindObjectOfType<AudioManager>().Stop("Tema1");
 		FindObjectOfType<AudioManager>().Play("Tema2");
 	}
-	public void lvl1(string Nil_Level1){
+	public void lvl1(string lvl1){
 
-		SceneManager.LoadScene (Nil_Level1);
+		SceneManager.LoadScene (lvl1);
 		FindObjectOfType<AudioManager>().Stop("Tema1");
 		FindObjectOfType<AudioManager>().Play("Tema2");
 	}
-	public void lvl2(string Nil_Level2){
+	public void lvl2(string lvl2){
 
-		SceneManager.LoadScene (Nil_Level2);
+		SceneManager.LoadScene (lvl2);
 		FindObjectOfType<AudioManager>().Stop("Tema1");
 		FindObjectOfType<AudioManager>().Play("Tema2");
 	}
-	public void mainMenu(string MainMenu){
+    public void lvl3(string lvl3)
+    {
+
+        SceneManager.LoadScene(lvl3);
+        FindObjectOfType<AudioManager>().Stop("Tema1");
+        FindObjectOfType<AudioManager>().Play("Tema2");
+    }
+    public void mainMenu(string MainMenu){
 
 		SceneManager.LoadScene (MainMenu);
 		FindObjectOfType<AudioManager>().Stop("Tema2");
