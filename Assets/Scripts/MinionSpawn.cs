@@ -8,6 +8,8 @@ public class MinionSpawn : MonoBehaviour {
 
 	private int counter;
 
+    public bool MobileBuild;
+
     TutorialManager tutoInstance;
 
     //MINION PREFABS
@@ -31,9 +33,8 @@ public class MinionSpawn : MonoBehaviour {
 
    //STRUCTS PEL LEVEL DESIGN 
    [System.Serializable]
-    public struct Minion
+    public class Minion
     {
-
         public int size;
 
         //0.2 ÉS VELOCITAT RAONABLE
@@ -87,10 +88,9 @@ public class MinionSpawn : MonoBehaviour {
                 yield return new WaitForSeconds(waves[i].spawnRatio);
 
                 if (j + 1 == waves[i].minion.Length)
-                {
+                { 
                     switch (waves[i].minion[j].behaviour)
                     {
-
                         case (Behaviour)0:
                             SpawnMinionBehaviour1(waves[i].minion[j], true);
                             break;
@@ -130,6 +130,7 @@ public class MinionSpawn : MonoBehaviour {
 
             }
             
+            
         }
     }
 
@@ -158,7 +159,9 @@ public class MinionSpawn : MonoBehaviour {
         int acum;
         int counter;
         int aux;
+
         
+
         switch (minion.colorComplexity)
         {
             case ColorComplexity.basic:
@@ -246,8 +249,10 @@ public class MinionSpawn : MonoBehaviour {
         magentaQuantity = 0;
         yellowQuantity = 0;
 
-        minionScript.speed = minion.speed; 
-
+        if(MobileBuild) minionScript.speed = minion.speed*3;
+ 
+        else minionScript.speed = minion.speed;
+        
         Instantiate (minion1, spawn1.transform.position, minion1.transform.rotation);
 	}
 
@@ -273,7 +278,9 @@ public class MinionSpawn : MonoBehaviour {
         magentaQuantity = 0;
         yellowQuantity = 0;
 
-        minionScript.speed = minion.speed;
+        if (MobileBuild) minionScript.speed = minion.speed * 3;
+
+        else minionScript.speed = minion.speed;
 
         Instantiate(minion2, spawn1.transform.position, minion2.transform.rotation);
 
@@ -302,7 +309,9 @@ public class MinionSpawn : MonoBehaviour {
         magentaQuantity = 0;
         yellowQuantity = 0;
 
-        minionScript.speed = minion.speed;
+        if (MobileBuild) minionScript.speed = minion.speed * 3;
+
+        else minionScript.speed = minion.speed;
 
         Instantiate(minion3, spawn1.transform.position, minion3.transform.rotation);
 

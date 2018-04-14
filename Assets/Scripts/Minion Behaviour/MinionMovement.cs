@@ -20,6 +20,8 @@ public class MinionMovement : MonoBehaviour {
 
     private float Size;
 
+    private Animator anim;
+
     //QUANTITAT TOTAL DEL MINION
     private Color totalColor;
     public int minionColorQuantity;
@@ -134,6 +136,8 @@ public class MinionMovement : MonoBehaviour {
 
         ConvineColors(cyanQuantity, magentaQuantity, yellowQuantity);
 
+        anim = GetComponentInChildren<Animator>();
+
 		NextHex = ActualHex.neigbours[3];
 		target = NextHex.gameObject.transform;
 		minionValue = minionColorQuantity * 15;
@@ -143,7 +147,7 @@ public class MinionMovement : MonoBehaviour {
     {
         UpdateColorVariables();
 
-        if (minionColorQuantity <= 0)
+        if (minionColorQuantity <= 0 || ActualHex == null)
         {
             Die();
         }
@@ -160,12 +164,14 @@ public class MinionMovement : MonoBehaviour {
 
         if (ActualHex.turret != null)
         {
+            anim.SetBool("isEating?", true);
             ActualHex.TurretDealDamage();
             return;
         }
 
-        if (ActualHex != null && ActualHex.HexColor == 'W' || ActualHex != null && !neutralHex)
+        if (ActualHex.HexColor == 'W' || !neutralHex)
         {
+            anim.SetBool("isEating?", false);
             MovementRecte();
         }
         else
