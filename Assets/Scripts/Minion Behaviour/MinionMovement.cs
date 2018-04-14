@@ -143,13 +143,13 @@ public class MinionMovement : MonoBehaviour {
     {
         UpdateColorVariables();
 
-        if (minionColorQuantity == 1)
-            lastColor = totalColor;
-
         if (minionColorQuantity <= 0)
         {
-			Die ();
+            Die();
         }
+
+        if (minionColorQuantity == 1)
+            lastColor = totalColor;
 
         ColorManager();
 

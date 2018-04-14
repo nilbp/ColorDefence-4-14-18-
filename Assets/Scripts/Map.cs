@@ -48,13 +48,27 @@ public class Map : MonoBehaviour {
     {
         return Random.Range(from, to);
     }
+
 	void Start () {
 
+        InitializeBoard();
 		createMap ();
 		FillNeighbours ();
 		//ClickableSpace ();
 
 	}
+
+    void InitializeBoard()
+    {
+        if (gameObject.name == "HexMap(Big)")
+        {
+            width = 11; height = 6;
+        }
+        else
+        {
+            width = 9; height = 4;
+        }
+    }
 
 	void createMap(){
 		
@@ -110,42 +124,6 @@ public class Map : MonoBehaviour {
 			}
 		}
 	}
-		
-	/*void SpawnEnemies(GameObject Hex_go, int x, int y){
-	
-		if(x == 0 && y == 7){
-
-			spawner.HexSpawn1 = Hex_go;
-		
-		}
-	}
-
-	void SpawnEnemies2(GameObject hexInfo, int x, int y){
-
-		if(x == 7 && y == 15){
-
-			spawner.HexSpawn2 = hexInfo;
-
-		}
-			
-
-	}
-	void SpawnEnemies3(GameObject hexInfo, int x, int y){
-
-		if(x == 7 && y == 1){
-
-			spawner.HexSpawn3 = hexInfo;
-
-		}
-	}
-	void SpawnEnemies4(GameObject hexInfo, int x, int y){
-
-		if(x == 15 && y == 7){
-
-			spawner.HexSpawn4 = hexInfo;
-
-		}
-	}*/
 
 	void FillNeighbours(){
 
@@ -238,8 +216,6 @@ public class Map : MonoBehaviour {
 		return retVal;
 	}
 
-
-
 	HexInfo GetLeftNeighbour(HexInfo ActualHex)
 	{
 		HexInfo retVal = null;
@@ -308,6 +284,7 @@ public class Map : MonoBehaviour {
 
 		return retVal;
 	}
+
 	HexInfo GetDownLeftNeighbour(HexInfo ActualHex){
 
 		HexInfo retVal=null;
@@ -320,7 +297,4 @@ public class Map : MonoBehaviour {
 		}
 		return retVal;
 	}
-
-
-
 }
