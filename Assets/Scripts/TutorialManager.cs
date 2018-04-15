@@ -14,6 +14,27 @@ public class TutorialManager : MonoBehaviour {
 
     TutorialManager tutorialManager;
 
+    void Start()
+    {
+        //Time.timeScale = 0;
+        //Invoke("CheckLastMinion", 1);
+    }
+
+    private void Update()
+    {
+        CheckLastMinion();
+    }
+
+    void CheckLastMinion()
+    {
+        if (lastMinion)
+        {
+            LoadNext();
+            lastMinion = false;
+        }
+
+        GameOver();
+    }
 
     public void LoadNext()
     {
@@ -30,31 +51,18 @@ public class TutorialManager : MonoBehaviour {
 
     public void LoadFirst(int i)
     {
-        Debug.Log("hola");
         panel[index].SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void PauseGame()
     {
-        //Time.timeScale = 0;
+        Time.timeScale = 0;
     }
     public void ResumeGame()
     {
         Time.timeScale = 1;
     }
-
-    private void Update()
-    {
-        
-		if (lastMinion)
-        {
-            LoadNext();
-            lastMinion = false;
-        }
-
-        GameOver();
-    }
-
 
     void GameOver()
     {

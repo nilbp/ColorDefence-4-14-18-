@@ -68,6 +68,13 @@ public class MinionMovement : MonoBehaviour {
         if (cyanQuantity < 0 || magentaQuantity < 0 || yellowQuantity < 0)
             return;
 
+        if (cyanQuantity == 0 && magentaQuantity == 0 && yellowQuantity == 0)
+        {
+            Die();
+            return;
+        }
+           
+
         minionColorQuantity = cyanQuantity + magentaQuantity + yellowQuantity;
         Color[] aColors = new Color[minionColorQuantity];
 

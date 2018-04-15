@@ -135,7 +135,7 @@ public class MoneyManager : MonoBehaviour {
         }
 
 		Debug.Log (combo);
-		contador = 4;
+		contador = 3;
 	}
 
 

@@ -6,7 +6,7 @@ public class destroyItSelf : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Invoke("Destroy",3);
+        Invoke("Destroy", 3);
 	}
 
     private void Destroy()
