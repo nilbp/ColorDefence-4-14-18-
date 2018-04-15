@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class monSelector : MonoBehaviour {
 
-	public int level;
+	//public int level;
 	public Button[] levelButtons;
 
 	void Start () 
@@ -14,7 +14,7 @@ public class monSelector : MonoBehaviour {
         int levelReached = PlayerPrefs.GetInt ("levelReached");
 
         for (int i = 0; i < levelButtons.Length; i++) {
-			if (i + 1 > level)//levelReached)
+			if (i > levelReached)//levelReached)
 				levelButtons [i].interactable = false;
 		}
 	}
