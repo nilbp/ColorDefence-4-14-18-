@@ -52,4 +52,14 @@ public class MainMenu : MonoBehaviour {
 		FindObjectOfType<AudioManager>().Stop("Tema2");
 		FindObjectOfType<AudioManager>().Play("Tema1");
 	}
+
+    //Funció d desbloquejar nivells
+    public void EndLevel(int level)
+    {
+        int currentLevelProgress = PlayerPrefs.GetInt("levelReached");
+
+        if (level < currentLevelProgress) { return; }
+
+        else { PlayerPrefs.SetInt("levelReached", level); }
+    }
 }
