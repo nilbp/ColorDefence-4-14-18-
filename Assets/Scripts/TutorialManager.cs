@@ -35,11 +35,12 @@ public class TutorialManager : MonoBehaviour {
     {
         if (lastMinion)
         {
-            //LoadNext();
+            if (numWaves == 0) { endPanel.SetActive(true); return;  }
+            LoadNext();
             lastMinion = false;
             numWaves--;
 
-            if (numWaves == 0) { endPanel.SetActive(true); }
+            
         }
         
         GameOver();
