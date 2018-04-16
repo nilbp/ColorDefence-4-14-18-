@@ -8,14 +8,20 @@ public class TutorialManager : MonoBehaviour {
     public static bool gameOver;
     public GameObject gameoverPanel;
 
+    public GameObject endPanel;
+
+    public int numWaves;
+
     public static bool lastMinion;
     public GameObject[] panel;
     public int index = 0;
 
-    TutorialManager tutorialManager;
+    public static TutorialManager tutorialManager;
 
     void Start()
     {
+        tutorialManager = this;
+
         //Time.timeScale = 0;
         //Invoke("CheckLastMinion", 1);
     }
@@ -29,10 +35,13 @@ public class TutorialManager : MonoBehaviour {
     {
         if (lastMinion)
         {
-            LoadNext();
+            //LoadNext();
             lastMinion = false;
-        }
+            numWaves--;
 
+            if (numWaves == 0) { endPanel.SetActive(true); }
+        }
+        
         GameOver();
     }
 

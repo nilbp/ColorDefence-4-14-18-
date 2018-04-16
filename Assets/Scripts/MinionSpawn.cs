@@ -67,10 +67,14 @@ public class MinionSpawn : MonoBehaviour {
 
     void Start()
     {
+        
+
         StartCoroutine(SpawnManager1());
         firstSpawnPoint = 0;
         lastSpawnPoint = Map.height;
         tutoInstance = GetComponent<TutorialManager>();
+
+        tutoInstance.numWaves = waves.Length; //per que el tutorial manager sapiga el numero de waves que hi ha
     }
 
     IEnumerator SpawnManager1()
@@ -124,13 +128,7 @@ public class MinionSpawn : MonoBehaviour {
                             break;
                     }
                 }
-
-               
-
-
-            }
-            
-            
+            }                    
         }
     }
 
