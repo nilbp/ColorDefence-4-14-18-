@@ -35,10 +35,11 @@ public class TutorialManager : MonoBehaviour {
     {
         if (lastMinion)
         {
+            numWaves--;
             if (numWaves == 0) { endPanel.SetActive(true); return;  }
             LoadNext();
             lastMinion = false;
-            numWaves--;
+           
 
             
         }
@@ -48,6 +49,8 @@ public class TutorialManager : MonoBehaviour {
 
     public void LoadNext()
     {
+        if (index == 0 || panel[index] == null) return;
+
         Time.timeScale = 0;
         panel[index].SetActive(false);
         panel[index+1].SetActive(true);

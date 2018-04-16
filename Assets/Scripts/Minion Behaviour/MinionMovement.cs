@@ -164,7 +164,7 @@ public class MinionMovement : MonoBehaviour {
 
         ColorManager();
 
-        if (ActualHex.x == 8)
+        if (ActualHex.x == Map.width-1)
         {
             TutorialManager.gameOver = true;
         }

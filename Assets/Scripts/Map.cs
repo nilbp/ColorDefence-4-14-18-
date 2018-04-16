@@ -15,7 +15,7 @@ public class Map : MonoBehaviour {
     //size of the map
 
     //Ha de ser parell (width i heith) SEMPRE!!
-    public static int width = 9;
+    public static int width = 10;
 	public static int height = 4;
 
 	private float alfa=90;
@@ -63,10 +63,6 @@ public class Map : MonoBehaviour {
         if (gameObject.name == "HexMap(Big)")
         {
             width = 11; height = 6;
-        }
-        else
-        {
-            width = 9; height = 4;
         }
     }
 

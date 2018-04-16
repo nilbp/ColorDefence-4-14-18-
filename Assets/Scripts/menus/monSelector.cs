@@ -27,16 +27,4 @@ public class monSelector : MonoBehaviour {
 
 }
 
-        for (int i = 0; i < levelButtons.Length; i++) {
-			if (i > levelReached)//levelReached)
-				levelButtons [i].interactable = false;
-		}
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-		
-	}
-
-}
+  
