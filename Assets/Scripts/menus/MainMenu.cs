@@ -46,6 +46,31 @@ public class MainMenu : MonoBehaviour {
         FindObjectOfType<AudioManager>().Stop("Tema1");
         FindObjectOfType<AudioManager>().Play("Tema2");
     }
+
+    public void lvl4(string lvl4)
+    {
+
+        SceneManager.LoadScene(lvl4);
+        FindObjectOfType<AudioManager>().Stop("Tema1");
+        FindObjectOfType<AudioManager>().Play("Tema2");
+    }
+
+    public void lvl5(string lvl5)
+    {
+
+        SceneManager.LoadScene(lvl5);
+        FindObjectOfType<AudioManager>().Stop("Tema1");
+        FindObjectOfType<AudioManager>().Play("Tema2");
+    }
+
+    public void lvl6(string lvl6)
+    {
+
+        SceneManager.LoadScene(lvl6);
+        FindObjectOfType<AudioManager>().Stop("Tema1");
+        FindObjectOfType<AudioManager>().Play("Tema2");
+    }
+
     public void mainMenu(string MainMenu){
 
 		SceneManager.LoadScene (MainMenu);

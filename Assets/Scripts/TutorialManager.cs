@@ -47,6 +47,7 @@ public class TutorialManager : MonoBehaviour {
 
     public void LoadNext()
     {
+        Time.timeScale = 0;
         panel[index].SetActive(false);
         panel[index+1].SetActive(true);
         index ++;
@@ -54,7 +55,7 @@ public class TutorialManager : MonoBehaviour {
     public void LoadLast()
     {
         panel[index].SetActive(false);
-        //Time.timeScale = 1;
+        Time.timeScale = 1;
 
     }
 
