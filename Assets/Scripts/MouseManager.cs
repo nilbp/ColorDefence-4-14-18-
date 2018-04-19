@@ -73,11 +73,11 @@ public class MouseManager : MonoBehaviour {
 				
                 if (MoneyManager.Pigment > 0)
                 {
-                    if (hexInfoObject!=null && hexInfoObject.HexColor == 'W')
+                    if (hexInfoObject!=null)
                     {
                         MeshRenderer mr = ourHitObject.GetComponentInChildren<MeshRenderer>();
 
-                            if (ColorInHand == 'C')
+                            if (ColorInHand == 'C' && hexInfoObject.HexColor != 'C')
                             {
 
                                 hexInfoObject.HexColor = 'C';
@@ -85,14 +85,14 @@ public class MouseManager : MonoBehaviour {
                                 MoneyManager.Pigment -= colorCost;
                                
                             }
-                            else if (ColorInHand == 'M')
+                            else if (ColorInHand == 'M' && hexInfoObject.HexColor != 'M')
                             {
                                 hexInfoObject.HexColor = 'M';
                                 hexInfoObject.SetColorTo(MagentaTex);
                                 MoneyManager.Pigment -= colorCost;
                               
                             }
-                            else if (ColorInHand == 'Y')
+                            else if (ColorInHand == 'Y' && hexInfoObject.HexColor != 'Y')
                             {
                                 hexInfoObject.HexColor = 'Y';
                                 hexInfoObject.SetColorTo(YellowTex);
