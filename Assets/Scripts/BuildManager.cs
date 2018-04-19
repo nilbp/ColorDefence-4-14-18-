@@ -2,7 +2,7 @@
 
 public class BuildManager : MonoBehaviour {
 
-	public static BuildManager instance;
+    public static BuildManager instance;
     private Vector3 offsetBuild;
 
     TubDePintura tubScript;
@@ -41,6 +41,8 @@ public class BuildManager : MonoBehaviour {
 
         MoneyManager.Pigment -= turretToBuild.cost;
 
+        turretToBuild.IncrementNumberOfTurrets();
+
         GameObject turret = (GameObject)Instantiate(turretToBuild.prefab, hex.gameObject.transform.position + offsetBuild, turretToBuild.prefab.transform.rotation);
 
         GameObject buildParticles = (GameObject)Instantiate(buildEffect, hex.transform.position, buildEffect.transform.rotation);
@@ -52,7 +54,7 @@ public class BuildManager : MonoBehaviour {
             tubScript.actualHex = hex;
             tubScript.tubColor = hex.HexColor;
             hex.HexColor = 'W';
-;
+
             hex.SetColorTo(defaultTexture);
         }
         else if (turret.GetComponent<SpraiScript>() != null)
@@ -61,6 +63,7 @@ public class BuildManager : MonoBehaviour {
             spraiScript.actualHex = hex;
             spraiScript.spraiColor = hex.HexColor;
             hex.HexColor = 'W';
+
             hex.SetColorTo(defaultTexture);
         }
 

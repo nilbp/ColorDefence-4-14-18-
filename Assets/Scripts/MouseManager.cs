@@ -59,16 +59,21 @@ public class MouseManager : MonoBehaviour {
         {
             ourHitObject = hitInfo.collider.transform.gameObject;
 
+            if (ourHitObject.tag != "Hex")
+                return;
+
             if (Input.GetMouseButtonDown(0))
             {
-                HexInfo hexInfoObject = ourHitObject.GetComponentInChildren<HexInfo>();              
+                HexInfo hexInfoObject = ourHitObject.GetComponentInChildren<HexInfo>();
+
+                
 
 				if (!hexInfoObject.Clickable)
 					return;
 				
                 if (MoneyManager.Pigment > 0)
                 {
-                    if (hexInfoObject!=null)
+                    if (hexInfoObject!=null && hexInfoObject.HexColor == 'W')
                     {
                         MeshRenderer mr = ourHitObject.GetComponentInChildren<MeshRenderer>();
 

@@ -36,12 +36,11 @@ public class TutorialManager : MonoBehaviour {
         if (lastMinion)
         {
             numWaves--;
+            lastMinion = false;
             if (numWaves == 0) { endPanel.SetActive(true); return;  }
             LoadNext();
-            lastMinion = false;
-           
-
             
+   
         }
         
         GameOver();
@@ -49,13 +48,14 @@ public class TutorialManager : MonoBehaviour {
 
     public void LoadNext()
     {
-        if (index == 0 || panel[index] == null) return;
+        if (panel[index] == null) return;
 
         Time.timeScale = 0;
         panel[index].SetActive(false);
         panel[index+1].SetActive(true);
         index ++;
     }
+
     public void LoadLast()
     {
         panel[index].SetActive(false);

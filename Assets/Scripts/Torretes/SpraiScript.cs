@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class SpraiScript : MonoBehaviour {
 
-	[Header("Atributes")]
+    public float life = 5;
+
+    [Header("Atributes")]
 
 	private float range = 1.4f; //distancia entre hex i hex
 	private float FireRatio = 0.6f; //3 = 3s ? 
@@ -124,6 +126,12 @@ public class SpraiScript : MonoBehaviour {
     }
 
     void Update(){
+
+        if (life <= 0)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
         if (target == null)
         {

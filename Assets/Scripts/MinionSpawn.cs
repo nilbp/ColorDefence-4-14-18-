@@ -8,7 +8,8 @@ public class MinionSpawn : MonoBehaviour {
 
 	private int counter;
 
-    public bool MobileBuild;
+    private bool MobileBuild = true;
+    const int incrementPerMobilBuild = 5;
 
     TutorialManager tutoInstance;
 
@@ -247,7 +248,7 @@ public class MinionSpawn : MonoBehaviour {
         magentaQuantity = 0;
         yellowQuantity = 0;
 
-        if(MobileBuild) minionScript.speed = minion.speed*3;
+        if(MobileBuild) minionScript.speed = minion.speed* incrementPerMobilBuild;
  
         else minionScript.speed = minion.speed;
         
@@ -276,7 +277,7 @@ public class MinionSpawn : MonoBehaviour {
         magentaQuantity = 0;
         yellowQuantity = 0;
 
-        if (MobileBuild) minionScript.speed = minion.speed * 3;
+        if (MobileBuild) minionScript.speed = minion.speed * incrementPerMobilBuild;
 
         else minionScript.speed = minion.speed;
 
@@ -307,7 +308,7 @@ public class MinionSpawn : MonoBehaviour {
         magentaQuantity = 0;
         yellowQuantity = 0;
 
-        if (MobileBuild) minionScript.speed = minion.speed * 3;
+        if (MobileBuild) minionScript.speed = minion.speed * incrementPerMobilBuild;
 
         else minionScript.speed = minion.speed;
 

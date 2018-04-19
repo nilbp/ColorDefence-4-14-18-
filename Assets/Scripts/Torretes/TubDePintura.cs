@@ -81,7 +81,10 @@ public class TubDePintura : MonoBehaviour {
 	void Update(){
 
         if (life <= 0)
+        {
             Destroy(gameObject);
+            return;
+        }
 
 		if (FireCountdown <= 0f && target!=null) 
 		{
