@@ -8,7 +8,7 @@ public class MinionSpawn : MonoBehaviour {
 
 	private int counter;
 
-    private bool MobileBuild = true;
+    private bool MobileBuild = false;
     const int incrementPerMobilBuild = 5;
 
     TutorialManager tutoInstance;
@@ -68,8 +68,6 @@ public class MinionSpawn : MonoBehaviour {
 
     void Start()
     {
-        
-
         StartCoroutine(SpawnManager1());
         firstSpawnPoint = 0;
         lastSpawnPoint = Map.height;
