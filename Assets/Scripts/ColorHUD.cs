@@ -9,6 +9,13 @@ public class ColorHUD : MonoBehaviour {
     public GameObject magentaButton;
     public GameObject yellowButton;
 
+    public static ColorHUD instance;
+
+    private void Start()
+    {
+        instance = this;
+    }
+
     public void NoColor()
     {
         MouseManager.ColorInHand = ' ';

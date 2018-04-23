@@ -10,9 +10,11 @@ public class TutorialManager : MonoBehaviour {
 
     public GameObject endPanel;
 
+    ColorHUD colorHudInstance;
+
     public int numWaves;
 
-    public static bool lastMinion;
+    public static bool lastMinion ;
     public GameObject[] panel;
     public int index = 0;
 
@@ -22,7 +24,7 @@ public class TutorialManager : MonoBehaviour {
     {
         tutorialManager = this;
 
-        //Time.timeScale = 0;
+        LoadFirst();
         //Invoke("CheckLastMinion", 1);
     }
 
@@ -38,9 +40,10 @@ public class TutorialManager : MonoBehaviour {
             numWaves--;
             lastMinion = false;
             if (numWaves == 0) { endPanel.SetActive(true); return;  }
+
+            MinionSpawn.lastMinionDead = true;            
             LoadNext();
-            
-   
+          
         }
         
         GameOver();
@@ -54,19 +57,22 @@ public class TutorialManager : MonoBehaviour {
         panel[index].SetActive(false);
         panel[index+1].SetActive(true);
         index ++;
+        colorHudInstance.NoColor();
     }
 
     public void LoadLast()
     {
         panel[index].SetActive(false);
+
         Time.timeScale = 1;
 
     }
 
-    public void LoadFirst(int i)
+    public void LoadFirst()
     {
-        panel[index].SetActive(true);
+        panel[0].SetActive(true);
         Time.timeScale = 0;
+    
     }
 
     public void PauseGame()

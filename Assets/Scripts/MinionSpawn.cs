@@ -1,10 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class MinionSpawn : MonoBehaviour {
 
 	GameObject spawn1;
+
+    public static bool lastMinionDead = true;
+
+    public int waveSecondsCounter;
+    public Text waveSecondsText;
+    public Button passWave;
 
 	private int counter;
 
@@ -73,7 +81,7 @@ public class MinionSpawn : MonoBehaviour {
         lastSpawnPoint = Map.height;
         tutoInstance = GetComponent<TutorialManager>();
 
-        tutoInstance.numWaves = waves.Length; //per que el tutorial manager sapiga el numero de waves que hi ha
+        tutoInstance.numWaves = waves.Length+1; //per que el tutorial manager sapiga el numero de waves que hi ha
     }
 
     IEnumerator SpawnManager1()
@@ -84,7 +92,26 @@ public class MinionSpawn : MonoBehaviour {
         {
              Time.timeScale = 1;
 
-			yield return new WaitForSeconds (waves[i].startTime);
+
+            while (lastMinionDead == false) { yield return new WaitForSeconds(1f); }
+
+            waveSecondsCounter = (int)waves[i].startTime;
+            waveSecondsText.gameObject.SetActive(true);
+            passWave.gameObject.SetActive(true);
+
+            while (waveSecondsCounter > 0)
+            {
+                waveSecondsCounter --;
+                waveSecondsText.text = waveSecondsCounter + " S";
+
+                 yield return new WaitForSeconds(1f);        
+            }
+
+            waveSecondsText.gameObject.SetActive(false);
+            passWave.gameObject.SetActive(false);
+            lastMinionDead = false;
+
+            //WaveCountDown(i);
 
             for (int j = 0; j < waves[i].minion.Length; j++)
             {
@@ -131,7 +158,18 @@ public class MinionSpawn : MonoBehaviour {
         }
     }
 
-    void LoadTutoImages(int i)
+    public void WaveCountDown(int i)
+    {
+
+            
+    }
+
+    public void PassWave()
+    {
+        waveSecondsCounter = 0;
+    }
+
+    /*void LoadTutoImages(int i)
     {
         switch (i)
         {
@@ -144,7 +182,7 @@ public class MinionSpawn : MonoBehaviour {
             case 4: tutoInstance.LoadFirst(7);
                 break;
         }
-    }
+    }*/
 
 	int RandomInt(int from, int to)
 	{
