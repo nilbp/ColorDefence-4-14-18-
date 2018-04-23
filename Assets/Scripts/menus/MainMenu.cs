@@ -71,6 +71,190 @@ public class MainMenu : MonoBehaviour {
         FindObjectOfType<AudioManager>().Play("Tema2");
     }
 
+    public void lvl7(string lvl7)
+    {
+
+        SceneManager.LoadScene(lvl7);
+        FindObjectOfType<AudioManager>().Stop("Tema1");
+        FindObjectOfType<AudioManager>().Play("Tema2");
+    }
+
+    public void lvl8(string lvl8)
+    {
+
+        SceneManager.LoadScene(lvl8);
+        FindObjectOfType<AudioManager>().Stop("Tema1");
+        FindObjectOfType<AudioManager>().Play("Tema2");
+    }
+
+    public void lvl9(string lvl9)
+    {
+
+        SceneManager.LoadScene(lvl9);
+        FindObjectOfType<AudioManager>().Stop("Tema1");
+        FindObjectOfType<AudioManager>().Play("Tema2");
+    }
+
+    public void lvl10(string lvl10)
+    {
+
+        SceneManager.LoadScene(lvl10);
+        FindObjectOfType<AudioManager>().Stop("Tema1");
+        FindObjectOfType<AudioManager>().Play("Tema2");
+    }
+
+    public void lvl11(string lvl11)
+    {
+
+        SceneManager.LoadScene(lvl11);
+        FindObjectOfType<AudioManager>().Stop("Tema1");
+        FindObjectOfType<AudioManager>().Play("Tema2");
+    }
+
+    public void lvl12(string lvl12)
+    {
+
+        SceneManager.LoadScene(lvl12);
+        FindObjectOfType<AudioManager>().Stop("Tema1");
+        FindObjectOfType<AudioManager>().Play("Tema2");
+    }
+
+    public void lvl13(string lvl13)
+    {
+
+        SceneManager.LoadScene(lvl13);
+        FindObjectOfType<AudioManager>().Stop("Tema1");
+        FindObjectOfType<AudioManager>().Play("Tema2");
+    }
+
+    public void lvl14(string lvl14)
+    {
+
+        SceneManager.LoadScene(lvl14);
+        FindObjectOfType<AudioManager>().Stop("Tema1");
+        FindObjectOfType<AudioManager>().Play("Tema2");
+    }
+
+    public void lvl15(string lvl15)
+    {
+
+        SceneManager.LoadScene(lvl15);
+        FindObjectOfType<AudioManager>().Stop("Tema1");
+        FindObjectOfType<AudioManager>().Play("Tema2");
+    }
+
+    public void lvl16(string lvl16)
+    {
+
+        SceneManager.LoadScene(lvl16);
+        FindObjectOfType<AudioManager>().Stop("Tema1");
+        FindObjectOfType<AudioManager>().Play("Tema2");
+    }
+
+    public void lvl17(string lvl17)
+    {
+
+        SceneManager.LoadScene(lvl17);
+        FindObjectOfType<AudioManager>().Stop("Tema1");
+        FindObjectOfType<AudioManager>().Play("Tema2");
+    }
+
+    public void lvl18(string lvl18)
+    {
+
+        SceneManager.LoadScene(lvl18);
+        FindObjectOfType<AudioManager>().Stop("Tema1");
+        FindObjectOfType<AudioManager>().Play("Tema2");
+    }
+
+    public void lvl19(string lvl19)
+    {
+
+        SceneManager.LoadScene(lvl19);
+        FindObjectOfType<AudioManager>().Stop("Tema1");
+        FindObjectOfType<AudioManager>().Play("Tema2");
+    }
+
+    public void lvl20(string lvl20)
+    {
+
+        SceneManager.LoadScene(lvl20);
+        FindObjectOfType<AudioManager>().Stop("Tema1");
+        FindObjectOfType<AudioManager>().Play("Tema2");
+    }
+
+    public void lvl21(string lvl21)
+    {
+
+        SceneManager.LoadScene(lvl21);
+        FindObjectOfType<AudioManager>().Stop("Tema1");
+        FindObjectOfType<AudioManager>().Play("Tema2");
+    }
+
+    public void lvl22(string lvl22)
+    {
+
+        SceneManager.LoadScene(lvl22);
+        FindObjectOfType<AudioManager>().Stop("Tema1");
+        FindObjectOfType<AudioManager>().Play("Tema2");
+    }
+
+    public void lvl23(string lvl23)
+    {
+
+        SceneManager.LoadScene(lvl23);
+        FindObjectOfType<AudioManager>().Stop("Tema1");
+        FindObjectOfType<AudioManager>().Play("Tema2");
+    }
+
+    public void lvl24(string lvl24)
+    {
+
+        SceneManager.LoadScene(lvl24);
+        FindObjectOfType<AudioManager>().Stop("Tema1");
+        FindObjectOfType<AudioManager>().Play("Tema2");
+    }
+
+    public void lvl25(string lvl25)
+    {
+
+        SceneManager.LoadScene(lvl25);
+        FindObjectOfType<AudioManager>().Stop("Tema1");
+        FindObjectOfType<AudioManager>().Play("Tema2");
+    }
+
+    public void lvl26(string lvl26)
+    {
+
+        SceneManager.LoadScene(lvl26);
+        FindObjectOfType<AudioManager>().Stop("Tema1");
+        FindObjectOfType<AudioManager>().Play("Tema2");
+    }
+
+    public void lvl27(string lvl27)
+    {
+
+        SceneManager.LoadScene(lvl27);
+        FindObjectOfType<AudioManager>().Stop("Tema1");
+        FindObjectOfType<AudioManager>().Play("Tema2");
+    }
+
+    public void lvl28(string lvl28)
+    {
+
+        SceneManager.LoadScene(lvl28);
+        FindObjectOfType<AudioManager>().Stop("Tema1");
+        FindObjectOfType<AudioManager>().Play("Tema2");
+    }
+
+    public void lvl29(string lvl29)
+    {
+
+        SceneManager.LoadScene(lvl29);
+        FindObjectOfType<AudioManager>().Stop("Tema1");
+        FindObjectOfType<AudioManager>().Play("Tema2");
+    }
+
     public void mainMenu(string MainMenu){
 
 		SceneManager.LoadScene (MainMenu);
