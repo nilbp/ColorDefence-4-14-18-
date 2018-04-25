@@ -122,9 +122,9 @@ public class MinionMovementRandom : MonoBehaviour {
         else
             yellowIndicator.SetActive(true);
 
-        cyanIndicatorScale = (cyanQuantity * 0.005f) + 0.05f;
-        magentaIndicatorScale = (magentaQuantity * 0.005f) + 0.05f;
-        yellowIndicatorScale = (yellowQuantity * 0.005f) + 0.05f;
+        cyanIndicatorScale = (cyanQuantity * 0.02f) + 0.05f;
+        magentaIndicatorScale = (magentaQuantity * 0.02f) + 0.05f;
+        yellowIndicatorScale = (yellowQuantity * 0.02f) + 0.05f;
 
         cyanIndicator.transform.localScale = new Vector3(cyanIndicatorScale, cyanIndicatorScale, cyanIndicatorScale);
         magentaIndicator.transform.localScale = new Vector3(magentaIndicatorScale, magentaIndicatorScale, magentaIndicatorScale);

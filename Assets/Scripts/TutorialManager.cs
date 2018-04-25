@@ -3,26 +3,29 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class TutorialManager : MonoBehaviour {
+public class TutorialManager : MonoBehaviour
+{
 
     public static bool gameOver;
     public GameObject gameoverPanel;
 
     public GameObject endPanel;
 
-    ColorHUD colorHudInstance;
+    private ColorHUD colorHudInstance;
 
     public int numWaves;
 
-    public static bool lastMinion ;
+    public static bool lastMinion;
     public GameObject[] panel;
     public int index = 0;
 
     public static TutorialManager tutorialManager;
 
-    void Start()
+    void Awake()
     {
         tutorialManager = this;
+
+        colorHudInstance = ColorHUD.instance;
 
         LoadFirst();
         //Invoke("CheckLastMinion", 1);
@@ -39,25 +42,34 @@ public class TutorialManager : MonoBehaviour {
         {
             numWaves--;
             lastMinion = false;
-            if (numWaves == 0) { endPanel.SetActive(true); return;  }
+            if (numWaves == 0) { endPanel.SetActive(true); return; }
 
-            MinionSpawn.lastMinionDead = true;            
+            MinionSpawn.lastMinionDead = true;
             LoadNext();
-          
         }
-        
         GameOver();
     }
 
     public void LoadNext()
     {
+
+        index++;
+
         if (panel[index] == null) return;
 
         Time.timeScale = 0;
-        panel[index].SetActive(false);
-        panel[index+1].SetActive(true);
-        index ++;
-        colorHudInstance.NoColor();
+        panel[index].SetActive(true);
+
+        if (colorHudInstance != null)
+            colorHudInstance.NoColor();
+
+
+        if (panel[index - 1] == null) return;
+
+        else panel[index - 1].SetActive(false);
+
+
+
     }
 
     public void LoadLast()
@@ -70,9 +82,11 @@ public class TutorialManager : MonoBehaviour {
 
     public void LoadFirst()
     {
-        panel[0].SetActive(true);
+        if (panel[0] == null) return;
+
         Time.timeScale = 0;
-    
+        panel[0].SetActive(true);
+
     }
 
     public void PauseGame()
@@ -96,8 +110,8 @@ public class TutorialManager : MonoBehaviour {
 
     void ChangeLevel()
     {
-		gameoverPanel.SetActive (false);
+        gameoverPanel.SetActive(false);
         SceneManager.LoadScene("lvlSelector");
-		gameOver = false;
+        gameOver = false;
     }
 }

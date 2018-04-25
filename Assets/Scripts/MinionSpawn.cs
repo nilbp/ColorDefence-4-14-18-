@@ -4,9 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class MinionSpawn : MonoBehaviour {
+public class MinionSpawn : MonoBehaviour
+{
 
-	GameObject spawn1;
+    const int START_TIME = 11;
+
+    GameObject spawn1;
 
     public static bool lastMinionDead = true;
 
@@ -14,7 +17,7 @@ public class MinionSpawn : MonoBehaviour {
     public Text waveSecondsText;
     public Button passWave;
 
-	private int counter;
+    private int counter;
 
     private bool MobileBuild = false;
     const int incrementPerMobilBuild = 5;
@@ -27,7 +30,7 @@ public class MinionSpawn : MonoBehaviour {
     public GameObject minion3;
 
     private int firstSpawnPoint;
-	private int lastSpawnPoint;
+    private int lastSpawnPoint;
 
     //VARIABLES PEL CANVI DE COLOR
     public int cyanQuantity;
@@ -35,13 +38,13 @@ public class MinionSpawn : MonoBehaviour {
     public int yellowQuantity;
 
     [System.Serializable]
-    public enum ColorComplexity {basic,medium,advanced,random};
+    public enum ColorComplexity { basic, medium, advanced, random };
 
     [System.Serializable]
-    public enum Behaviour {move_Forward, mov_S, move_Random};
+    public enum Behaviour { move_Forward, mov_S, move_Random };
 
-   //STRUCTS PEL LEVEL DESIGN 
-   [System.Serializable]
+    //STRUCTS PEL LEVEL DESIGN 
+    [System.Serializable]
     public class Minion
     {
         public int size;
@@ -81,17 +84,18 @@ public class MinionSpawn : MonoBehaviour {
         lastSpawnPoint = Map.height;
         tutoInstance = GetComponent<TutorialManager>();
 
-        tutoInstance.numWaves = waves.Length+1; //per que el tutorial manager sapiga el numero de waves que hi ha
+        tutoInstance.numWaves = waves.Length; //per que el tutorial manager sapiga el numero de waves que hi ha
     }
 
     IEnumerator SpawnManager1()
     {
-		
+
 
         for (int i = 0; i < waves.Length; i++)
         {
-             Time.timeScale = 1;
+            //Time.timeScale = 1;
 
+            waves[i].startTime = START_TIME; // start time constant a totes les waves 11 secs
 
             while (lastMinionDead == false) { yield return new WaitForSeconds(1f); }
 
@@ -101,10 +105,10 @@ public class MinionSpawn : MonoBehaviour {
 
             while (waveSecondsCounter > 0)
             {
-                waveSecondsCounter --;
+                waveSecondsCounter--;
                 waveSecondsText.text = waveSecondsCounter + " S";
 
-                 yield return new WaitForSeconds(1f);        
+                yield return new WaitForSeconds(1f);
             }
 
             waveSecondsText.gameObject.SetActive(false);
@@ -118,7 +122,7 @@ public class MinionSpawn : MonoBehaviour {
                 yield return new WaitForSeconds(waves[i].spawnRatio);
 
                 if (j + 1 == waves[i].minion.Length)
-                { 
+                {
                     switch (waves[i].minion[j].behaviour)
                     {
                         case (Behaviour)0:
@@ -141,7 +145,7 @@ public class MinionSpawn : MonoBehaviour {
                     {
 
                         case (Behaviour)0:
-                            SpawnMinionBehaviour1(waves[i].minion[j],false);
+                            SpawnMinionBehaviour1(waves[i].minion[j], false);
                             break;
                         case (Behaviour)1:
                             SpawnMinionBehaviour2(waves[i].minion[j], false);
@@ -154,14 +158,14 @@ public class MinionSpawn : MonoBehaviour {
                             break;
                     }
                 }
-            }                    
+            }
         }
     }
 
     public void WaveCountDown(int i)
     {
 
-            
+
     }
 
     public void PassWave()
@@ -184,18 +188,19 @@ public class MinionSpawn : MonoBehaviour {
         }
     }*/
 
-	int RandomInt(int from, int to)
-	{
-		return Random.Range (from, to);
-	}
+    int RandomInt(int from, int to)
+    {
+        return Random.Range(from, to);
+    }
 
-    void BuildMinion(Minion minion)  {
+    void BuildMinion(Minion minion)
+    {
 
         int acum;
         int counter;
         int aux;
 
-        
+
 
         switch (minion.colorComplexity)
         {
@@ -209,7 +214,7 @@ public class MinionSpawn : MonoBehaviour {
                     yellowQuantity = minion.size;
                 break;
             case ColorComplexity.medium:
-                counter = RandomInt(1, minion.size); 
+                counter = RandomInt(1, minion.size);
                 acum = RandomInt(1, 4);
                 if (acum == 1)
                 {
@@ -228,7 +233,7 @@ public class MinionSpawn : MonoBehaviour {
                 }
                 break;
             case ColorComplexity.advanced:
-                counter = RandomInt(1, minion.size-1);
+                counter = RandomInt(1, minion.size - 1);
                 aux = RandomInt(1, minion.size - counter);
 
                 acum = RandomInt(1, 4);
@@ -256,21 +261,22 @@ public class MinionSpawn : MonoBehaviour {
                 BuildMinion(minion);
                 break;
         }
-    } 
+    }
 
-   //FORWARD MOVE
-	void SpawnMinionBehaviour1(Minion minion, bool isLastMinion){
+    //FORWARD MOVE
+    void SpawnMinionBehaviour1(Minion minion, bool isLastMinion)
+    {
 
-        
+
         spawn1 = GameObject.Find("Hex_0_" + RandomInt(firstSpawnPoint, lastSpawnPoint));
 
         //PASSO, A L'SCRIPT DEL MINION, "HEXINFO" (NECESSARI PER QUE EL MINION SAPIGA SABER ON ÉS) I VARIABLES DE COLOR, TAMANY I VELOCITAT (PER QUE SAPIGA COM CONSTRUIR-SE)
         HexInfo spawn1Hex = spawn1.GetComponentInChildren<HexInfo>();
-        MinionMovement minionScript = minion1.GetComponent<MinionMovement> ();
+        MinionMovement minionScript = minion1.GetComponent<MinionMovement>();
         ColorComponents colorComponents = minion1.GetComponent<ColorComponents>();
 
         colorComponents.lastMinionInWave = isLastMinion;
-		minionScript.ActualHex = spawn1Hex;
+        minionScript.ActualHex = spawn1Hex;
 
         //BuildMinion(minion);
 
@@ -284,18 +290,18 @@ public class MinionSpawn : MonoBehaviour {
         magentaQuantity = 0;
         yellowQuantity = 0;
 
-        if(MobileBuild) minionScript.speed = minion.speed* incrementPerMobilBuild;
- 
+        if (MobileBuild) minionScript.speed = minion.speed * incrementPerMobilBuild;
+
         else minionScript.speed = minion.speed;
-        
-        Instantiate (minion1, spawn1.transform.position, minion1.transform.rotation);
-	}
+
+        Instantiate(minion1, spawn1.transform.position, minion1.transform.rotation);
+    }
 
     //S MOVE
-	void SpawnMinionBehaviour2(Minion minion, bool isLastMinion)
+    void SpawnMinionBehaviour2(Minion minion, bool isLastMinion)
     {
         //MATEIXA ESTRUCTURA QUE "FORWARD MOVE" PERO INSTANTIAN UN MINION AMB UN ALTRE COMPORTAMENT 
-        spawn1 = GameObject.Find("Hex_0_" + RandomInt(firstSpawnPoint+1, lastSpawnPoint-1));
+        spawn1 = GameObject.Find("Hex_0_" + RandomInt(firstSpawnPoint + 1, lastSpawnPoint - 1));
 
         HexInfo spawn1Hex = spawn1.GetComponentInChildren<HexInfo>();
         MinionMovementS minionScript = minion2.GetComponent<MinionMovementS>();
@@ -322,7 +328,7 @@ public class MinionSpawn : MonoBehaviour {
     }
 
     //RANDOM MOVE
-	void SpawnMinionBehaviour3(Minion minion, bool isLastMinion)
+    void SpawnMinionBehaviour3(Minion minion, bool isLastMinion)
     {
 
         //MATEIXA ESTRUCTURA QUE "FORWARD MOVE" PERO INSTANTIAN UN MINION AMB UN ALTRE COMPORTAMENT 
