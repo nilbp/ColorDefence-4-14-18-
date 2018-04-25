@@ -63,7 +63,7 @@ public class MainMenu : MonoBehaviour {
         FindObjectOfType<AudioManager>().Play("Tema2");
     }
 
-    public void lvl6(string lvl6)
+    public void Lvl6(string lvl6)
     {
 
         SceneManager.LoadScene(lvl6);
@@ -71,7 +71,7 @@ public class MainMenu : MonoBehaviour {
         FindObjectOfType<AudioManager>().Play("Tema2");
     }
 
-    public void lvl7(string lvl7)
+    public void Lvl7(string lvl7)
     {
 
         SceneManager.LoadScene(lvl7);
@@ -79,7 +79,7 @@ public class MainMenu : MonoBehaviour {
         FindObjectOfType<AudioManager>().Play("Tema2");
     }
 
-    public void lvl8(string lvl8)
+    public void Lvl8(string lvl8)
     {
 
         SceneManager.LoadScene(lvl8);
