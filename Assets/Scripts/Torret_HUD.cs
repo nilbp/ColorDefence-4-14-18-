@@ -22,11 +22,13 @@ public class Torret_HUD : MonoBehaviour {
 
     public void SelectSprai()
     {
+        FindObjectOfType<AudioManager>().Play("Select");
         buildManager.SelectTurretToBuild(sprai,offsetSprai);
     }
 
     public void SelectTub()
     {
+        FindObjectOfType<AudioManager>().Play("Select");
         buildManager.SelectTurretToBuild(tub,offsetTub);
     }
 

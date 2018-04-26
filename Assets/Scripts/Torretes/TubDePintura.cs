@@ -155,7 +155,7 @@ public class TubDePintura : MonoBehaviour {
 
 void Shoot(){
 
-
+        FindObjectOfType<AudioManager>().Play("Tub4");
         anim.SetTrigger(shootAnimation);
 
         GameObject bulletGO = (GameObject)Instantiate (bulletPrefab, firePoint.position, firePoint.rotation);

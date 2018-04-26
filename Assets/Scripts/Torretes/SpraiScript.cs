@@ -149,10 +149,10 @@ public class SpraiScript : MonoBehaviour {
 	}
 
 	void Shoot(){
-	
-        //anim.SetTrigger(shootAnimation);
 
-		GameObject bulletGO = (GameObject)Instantiate (bulletPrefab, firePoint.position, firePoint.rotation);
+        //anim.SetTrigger(shootAnimation);
+        FindObjectOfType<AudioManager>().Play("Pp2");
+        GameObject bulletGO = (GameObject)Instantiate (bulletPrefab, firePoint.position, firePoint.rotation);
 		Bullet bullet = bulletGO.GetComponent<Bullet> ();
 
 		if (bullet != null) {
