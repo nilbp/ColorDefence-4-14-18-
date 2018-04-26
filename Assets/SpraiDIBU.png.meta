@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 8cf7959354e71bb4f9ddacd385f4dbf0
-timeCreated: 1524689053
+guid: 7326562e616ef0e4e8efd099a84d2e4f
+timeCreated: 1524760271
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
@@ -45,7 +45,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 1408, y: 0, z: 12, w: 834}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -79,42 +79,7 @@ TextureImporter:
   spriteSheet:
     serializedVersion: 2
     sprites: []
-    outline:
-    - - {x: 700, y: -514}
-      - {x: 700, y: -527}
-      - {x: 704, y: -531}
-      - {x: 931, y: -531}
-      - {x: 936, y: -528}
-      - {x: 937, y: -525}
-      - {x: 937, y: -302}
-      - {x: 934, y: -298}
-      - {x: 931, y: -297}
-      - {x: 705, y: -297}
-      - {x: 701, y: -299}
-      - {x: 700, y: -302}
-      - {x: 700, y: -307}
-      - {x: 699, y: -308}
-      - {x: 699, y: -315}
-      - {x: 698, y: -316}
-      - {x: 698, y: -319}
-      - {x: 691, y: -319}
-      - {x: 691, y: -303}
-      - {x: 690, y: -300}
-      - {x: 686, y: -297}
-      - {x: 464, y: -297}
-      - {x: 461, y: -300}
-      - {x: 460, y: -300}
-      - {x: 455, y: -303}
-      - {x: 454, y: -306}
-      - {x: 454, y: -522}
-      - {x: 455, y: -523}
-      - {x: 455, y: -525}
-      - {x: 457, y: -528}
-      - {x: 464, y: -531}
-      - {x: 685, y: -531}
-      - {x: 691, y: -526}
-      - {x: 691, y: -515}
-      - {x: 693, y: -514}
+    outline: []
     physicsShape: []
   spritePackingTag: 
   userData: 
