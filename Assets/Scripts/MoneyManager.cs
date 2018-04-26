@@ -8,8 +8,8 @@ public class MoneyManager : MonoBehaviour {
 
     private static GameObject canvas;
 
-    public static int Pigment ;
-    public int startPigment = 40;
+    public static int Pigment;
+    private int startPigment = 40;
 	public Text text;
 
 	//Combo variables
@@ -51,8 +51,7 @@ public class MoneyManager : MonoBehaviour {
     }
 
 	void Update()
-	{
-		
+	{		
 		text.text = " " + Pigment;
 
 		if(contador >= 0)
