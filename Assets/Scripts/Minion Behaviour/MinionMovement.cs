@@ -63,7 +63,9 @@ public class MinionMovement : MonoBehaviour {
 
     void ConvineColors(int cyanQuantity , int magentaQuantity, int yellowQuantity)
     {
-        if (cyanQuantity < 0 || magentaQuantity < 0 || yellowQuantity < 0) return;
+        if (cyanQuantity < 0) cyanQuantity = 0;
+        if (magentaQuantity < 0) magentaQuantity = 0;
+        if (yellowQuantity < 0) yellowQuantity = 0;
 
         ColorIndicatorManager(cyanQuantity, magentaQuantity, yellowQuantity);
 
