@@ -128,7 +128,7 @@ public class MinionMovementS : MonoBehaviour {
 
     void Start () {
 
-        if (PlayerPrefs.GetInt("levelReached") > 18) DefaultTexture = iceHexes;
+        //if () DefaultTexture = iceHexes;
 
         minionRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
         ownColor = GetComponent<ColorComponents>();

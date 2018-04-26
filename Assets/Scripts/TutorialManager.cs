@@ -23,6 +23,8 @@ public class TutorialManager : MonoBehaviour
 
     void Start()
     {
+        gameOver = false;
+
         tutorialManager = this;
 
         colorHudInstance = ColorHUD.instance;
