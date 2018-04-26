@@ -19,7 +19,7 @@ public class BuildManager : MonoBehaviour {
 			return;
 		}
 		instance = this;
-	}
+}
 
 	private TurretBlueprint turretToBuild;
 

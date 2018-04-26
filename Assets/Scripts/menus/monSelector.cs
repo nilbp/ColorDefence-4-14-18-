@@ -13,9 +13,10 @@ public class monSelector : MonoBehaviour {
 
     void Start () 
 	{
+        PlayerPrefs.SetInt("levelReached",30);
 
-        //levelReached = PlayerPrefs.GetInt ("levelReached");
-        levelReached = 30;
+        levelReached = PlayerPrefs.GetInt ("levelReached");
+
         for (int i = 0; i < levelButtons.Length; i++) {
 			if (i > levelReached)//levelReached)
 				levelButtons [i].interactable = false;

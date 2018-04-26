@@ -12,7 +12,8 @@ public class MinionMovementRandom : MonoBehaviour {
 	private float minDist = 0.3f;
 	private bool neutralHex = false;
 
-	public Texture DefaultTexture;
+    public Texture iceHexes;
+    public Texture DefaultTexture;
     private SkinnedMeshRenderer minionRenderer;
     private ColorComponents ownColor;
 
@@ -140,7 +141,9 @@ public class MinionMovementRandom : MonoBehaviour {
 
     void Start () {
 
-		minionRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+        if (PlayerPrefs.GetInt("levelReached") > 18) DefaultTexture = iceHexes;
+
+        minionRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
         ownColor = GetComponent<ColorComponents>();
         //INICIALITZAR ELS PROPIS COLORS
         cyanQuantity = ownColor.cyanComponent;
