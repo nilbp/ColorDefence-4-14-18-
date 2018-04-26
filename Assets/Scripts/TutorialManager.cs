@@ -21,7 +21,7 @@ public class TutorialManager : MonoBehaviour
 
     public static TutorialManager tutorialManager;
 
-    void Awake()
+    void Start()
     {
         tutorialManager = this;
 

@@ -66,6 +66,8 @@ public class MinionMovementRandom : MonoBehaviour {
 
     void ConvineColors(int cyanQuantity, int magentaQuantity, int yellowQuantity)
     {
+        if (cyanQuantity < 0 || magentaQuantity < 0 || yellowQuantity < 0) return;
+
         ColorIndicatorManager(cyanQuantity, magentaQuantity, yellowQuantity);
 
         if (cyanQuantity < 0 || magentaQuantity < 0 || yellowQuantity < 0)
@@ -78,16 +80,19 @@ public class MinionMovementRandom : MonoBehaviour {
         {
             if (cyanQuantity > 0)
             {
+                if (aColors[i] == null) return;
                 aColors[i] += Color.cyan;
                 cyanQuantity--;
             }
             else if (magentaQuantity > 0)
             {
+                if (aColors[i] == null) return;
                 aColors[i] += Color.magenta;
                 magentaQuantity--;
             }
             else if (yellowQuantity > 0)
             {
+                if (aColors[i] == null) return;
                 aColors[i] += Color.yellow;
                 yellowQuantity--;
             }
@@ -165,7 +170,7 @@ public class MinionMovementRandom : MonoBehaviour {
 
         ColorManager();
 
-        if (ActualHex.x == 8)
+        if (ActualHex.x == Map.width - 1)
         {
             TutorialManager.gameOver = true;
         }

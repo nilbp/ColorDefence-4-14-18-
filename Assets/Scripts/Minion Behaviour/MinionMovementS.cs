@@ -55,6 +55,8 @@ public class MinionMovementS : MonoBehaviour {
 
     void ConvineColors(int cyanQuantity, int magentaQuantity, int yellowQuantity)
     {
+        if (cyanQuantity < 0 || magentaQuantity < 0 || yellowQuantity < 0) return;
+
         ColorIndicatorManager(cyanQuantity, magentaQuantity, yellowQuantity);
 
         int totalSize = cyanQuantity + magentaQuantity + yellowQuantity;
@@ -64,16 +66,19 @@ public class MinionMovementS : MonoBehaviour {
         {
             if (cyanQuantity > 0)
             {
+                if (aColors[i] == null) return;
                 aColors[i] += Color.cyan;
                 cyanQuantity--;
             }
             else if (magentaQuantity > 0)
             {
+                if (aColors[i] == null) return;
                 aColors[i] += Color.magenta;
                 magentaQuantity--;
             }
             else if (yellowQuantity > 0)
             {
+
                 aColors[i] += Color.yellow;
                 yellowQuantity--;
             }
@@ -152,7 +157,7 @@ public class MinionMovementS : MonoBehaviour {
 
         ColorManager();
 
-        if (ActualHex.x == 8)
+        if (ActualHex.x == Map.width - 1)
         {
             TutorialManager.gameOver = true;
         }
@@ -187,7 +192,6 @@ public class MinionMovementS : MonoBehaviour {
 
 		if (ownColor.lastMinionInWave)
 		{
-			Debug.Log("lastminion dead");
 			TutorialManager.lastMinion = true;
 			return;
 		}

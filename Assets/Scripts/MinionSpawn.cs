@@ -93,7 +93,7 @@ public class MinionSpawn : MonoBehaviour
 
         for (int i = 0; i < waves.Length; i++)
         {
-            //Time.timeScale = 1;
+            //Time.timeScale = 0;
 
             waves[i].startTime = START_TIME; // start time constant a totes les waves 11 secs
 
@@ -301,7 +301,7 @@ public class MinionSpawn : MonoBehaviour
     void SpawnMinionBehaviour2(Minion minion, bool isLastMinion)
     {
         //MATEIXA ESTRUCTURA QUE "FORWARD MOVE" PERO INSTANTIAN UN MINION AMB UN ALTRE COMPORTAMENT 
-        spawn1 = GameObject.Find("Hex_0_" + RandomInt(firstSpawnPoint + 1, lastSpawnPoint - 1));
+        spawn1 = GameObject.Find("Hex_0_" + RandomInt(firstSpawnPoint + 1, lastSpawnPoint));
 
         HexInfo spawn1Hex = spawn1.GetComponentInChildren<HexInfo>();
         MinionMovementS minionScript = minion2.GetComponent<MinionMovementS>();
