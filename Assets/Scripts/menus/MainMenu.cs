@@ -264,6 +264,21 @@ public class MainMenu : MonoBehaviour {
         FindObjectOfType<AudioManager>().Play("Tema1");
 	}
 
+    public void SelectorBosc(string SelectorBosc)
+    {
+        SceneManager.LoadScene(SelectorBosc);
+    }
+
+    public void SelectorIce(string SelectorIce)
+    {
+        SceneManager.LoadScene(SelectorIce);
+    }
+
+    public void SelectorSabana(string SelectorSabana)
+    {
+        SceneManager.LoadScene(SelectorSabana);
+    }
+
     //Funció d desbloquejar nivells
     public void EndLevel(int level)
     {
