@@ -57,5 +57,27 @@ public class AudioManager : MonoBehaviour {
 		s.source.Stop();
 	}
 
+    /*public void PlayDelayTub(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.Log("Can't find the sound");
+            return;
+        }
+        s.source.PlayDelayed(0.888f);
+    }
+
+    public void PlayDelaySpray(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.Log("Can't find the sound");
+            return;
+        }
+        s.source.PlayDelayed(0.313f);
+    }*/
+
     //On vulguis cridar l'audio: FindObjectOfType<AudioManager>().Play("Com es digui el audio");
 }

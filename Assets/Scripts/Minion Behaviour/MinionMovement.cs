@@ -194,8 +194,8 @@ public class MinionMovement : MonoBehaviour {
 
 	void Die()
 	{
-
-		MoneyManager.Pigment += minionValue;
+        FindObjectOfType<AudioManager>().Play("Clinc1");
+        MoneyManager.Pigment += minionValue;
 		MoneyManager.Combo(transform, minionValue/15);
 		Destroy(gameObject);
 

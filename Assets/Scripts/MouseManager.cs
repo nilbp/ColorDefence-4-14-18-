@@ -69,19 +69,20 @@ public class MouseManager : MonoBehaviour
                 HexInfo hexInfoObject = ourHitObject.GetComponentInChildren<HexInfo>();
 
 
-
                 if (!hexInfoObject.Clickable)
-                    return;
+             
+                return;
 
                 if (MoneyManager.Pigment > 0)
                 {
+                   
                     if (hexInfoObject != null)
                     {
                         MeshRenderer mr = ourHitObject.GetComponentInChildren<MeshRenderer>();
 
                         if (ColorInHand == 'C' && hexInfoObject.HexColor != 'C')
                         {
-
+                            FindObjectOfType<AudioManager>().Play("Pop1");
                             hexInfoObject.HexColor = 'C';
                             hexInfoObject.SetColorTo(CyanTex);
                             MoneyManager.Pigment -= colorCost;
@@ -89,6 +90,7 @@ public class MouseManager : MonoBehaviour
                         }
                         else if (ColorInHand == 'M' && hexInfoObject.HexColor != 'M')
                         {
+                            FindObjectOfType<AudioManager>().Play("Pop2");
                             hexInfoObject.HexColor = 'M';
                             hexInfoObject.SetColorTo(MagentaTex);
                             MoneyManager.Pigment -= colorCost;
@@ -96,6 +98,7 @@ public class MouseManager : MonoBehaviour
                         }
                         else if (ColorInHand == 'Y' && hexInfoObject.HexColor != 'Y')
                         {
+                            FindObjectOfType<AudioManager>().Play("Pop3");
                             hexInfoObject.HexColor = 'Y';
                             hexInfoObject.SetColorTo(YellowTex);
                             MoneyManager.Pigment -= colorCost;

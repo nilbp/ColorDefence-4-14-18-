@@ -54,7 +54,7 @@ public class BuildManager : MonoBehaviour {
             tubScript.actualHex = hex;
             tubScript.tubColor = hex.HexColor;
             hex.HexColor = 'W';
-
+            FindObjectOfType<AudioManager>().Play("Construcció");
             hex.SetColorTo(defaultTexture);
         }
         else if (turret.GetComponent<SpraiScript>() != null)
@@ -63,7 +63,7 @@ public class BuildManager : MonoBehaviour {
             spraiScript.actualHex = hex;
             spraiScript.spraiColor = hex.HexColor;
             hex.HexColor = 'W';
-
+            FindObjectOfType<AudioManager>().Play("Construcció");
             hex.SetColorTo(defaultTexture);
         }
 

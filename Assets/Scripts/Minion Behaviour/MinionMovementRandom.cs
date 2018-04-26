@@ -197,8 +197,8 @@ public class MinionMovementRandom : MonoBehaviour {
 
 	void Die()
 	{
-
-		MoneyManager.Pigment += minionValue;
+        FindObjectOfType<AudioManager>().Play("Clinc2");
+        MoneyManager.Pigment += minionValue;
 		MoneyManager.Combo(transform, minionValue / 15);
 		Destroy(gameObject);
 
