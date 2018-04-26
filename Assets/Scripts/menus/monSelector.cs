@@ -8,21 +8,35 @@ public class monSelector : MonoBehaviour {
 
 	//public int level;
 	public Button[] levelButtons;
-    int levelReached;
+    public Image[] locks;
+    private int levelReached;
+
+    public Image levBosc;
+    public Image levIce;
 
 
     void Start () 
 	{
-        PlayerPrefs.SetInt("levelReached",30);
+        PlayerPrefs.SetInt("levelReached", 30);
 
         levelReached = PlayerPrefs.GetInt ("levelReached");
 
         for (int i = 0; i < levelButtons.Length; i++) {
-			if (i > levelReached)//levelReached)
-				levelButtons [i].interactable = false;
+            if (i < levelReached)
+            {
+                if (levelButtons[i] != null)
+                {
+                    levelButtons[i].interactable = true;
+                    locks[i].gameObject.SetActive(false);
+                }
+            }
 		}
 
-      
+        if (levBosc != null && levIce != null)
+        {
+            if (levelReached > 10) levBosc.gameObject.SetActive(false);
+            if (levelReached > 20) levIce.gameObject.SetActive(false);              
+        }
     }
 	
 	// Update is called once per frame
@@ -30,7 +44,6 @@ public class monSelector : MonoBehaviour {
 	{
         Debug.Log(levelReached);
     }
-
 }
 
   

@@ -19,8 +19,8 @@ public class MinionSpawn : MonoBehaviour
 
     private int counter;
 
-    private bool MobileBuild = false;
-    const int incrementPerMobilBuild = 5;
+    private bool MobileBuild = true;
+    const int incrementPerMobilBuild = 6;
 
     TutorialManager tutoInstance;
 
