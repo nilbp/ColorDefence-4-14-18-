@@ -93,7 +93,7 @@ public class MinionSpawn : MonoBehaviour
 
         for (int i = 0; i < waves.Length; i++)
         {
-            //Time.timeScale = 0;
+            Time.timeScale = 1;
 
             waves[i].startTime = START_TIME; // start time constant a totes les waves 11 secs
 

@@ -39,10 +39,9 @@ public class monSelector : MonoBehaviour {
         }
     }
 	
-	// Update is called once per frame
 	void Update () 
 	{
-        Debug.Log(levelReached);
+       
     }
 }
 
