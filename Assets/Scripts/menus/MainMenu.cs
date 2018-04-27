@@ -109,6 +109,7 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene(lvl10);
         FindObjectOfType<AudioManager>().Stop("Tema1");
         FindObjectOfType<AudioManager>().Play("Bosc");
+        FindObjectOfType<AudioManager>().Play("BoscMusic");
     }
 
     public void lvl11(string lvl11)
@@ -117,6 +118,7 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene(lvl11);
         FindObjectOfType<AudioManager>().Stop("Tema1");
         FindObjectOfType<AudioManager>().Play("Bosc");
+        FindObjectOfType<AudioManager>().Play("BoscMusic");
     }
 
     public void lvl12(string lvl12)
@@ -125,6 +127,7 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene(lvl12);
         FindObjectOfType<AudioManager>().Stop("Tema1");
         FindObjectOfType<AudioManager>().Play("Bosc");
+        FindObjectOfType<AudioManager>().Play("BoscMusic");
     }
 
     public void lvl13(string lvl13)
@@ -133,6 +136,7 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene(lvl13);
         FindObjectOfType<AudioManager>().Stop("Tema1");
         FindObjectOfType<AudioManager>().Play("Bosc");
+        FindObjectOfType<AudioManager>().Play("BoscMusic");
     }
 
     public void lvl14(string lvl14)
@@ -141,6 +145,7 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene(lvl14);
         FindObjectOfType<AudioManager>().Stop("Tema1");
         FindObjectOfType<AudioManager>().Play("Bosc");
+        FindObjectOfType<AudioManager>().Play("BoscMusic");
     }
 
     public void lvl15(string lvl15)
@@ -149,6 +154,7 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene(lvl15);
         FindObjectOfType<AudioManager>().Stop("Tema1");
         FindObjectOfType<AudioManager>().Play("Bosc");
+        FindObjectOfType<AudioManager>().Play("BoscMusic");
     }
 
     public void lvl16(string lvl16)
@@ -157,6 +163,7 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene(lvl16);
         FindObjectOfType<AudioManager>().Stop("Tema1");
         FindObjectOfType<AudioManager>().Play("Bosc");
+        FindObjectOfType<AudioManager>().Play("BoscMusic");
     }
 
     public void lvl17(string lvl17)
@@ -165,6 +172,7 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene(lvl17);
         FindObjectOfType<AudioManager>().Stop("Tema1");
         FindObjectOfType<AudioManager>().Play("Bosc");
+        FindObjectOfType<AudioManager>().Play("BoscMusic");
     }
 
     public void lvl18(string lvl18)
@@ -173,6 +181,7 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene(lvl18);
         FindObjectOfType<AudioManager>().Stop("Tema1");
         FindObjectOfType<AudioManager>().Play("Bosc");
+        FindObjectOfType<AudioManager>().Play("BoscMusic");
     }
 
     public void lvl19(string lvl19)
@@ -181,6 +190,7 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene(lvl19);
         FindObjectOfType<AudioManager>().Stop("Tema1");
         FindObjectOfType<AudioManager>().Play("Bosc");
+        FindObjectOfType<AudioManager>().Play("BoscMusic");
     }
 
     public void lvl20(string lvl20)
@@ -189,7 +199,9 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene(lvl20);
         FindObjectOfType<AudioManager>().Stop("Tema1");
         FindObjectOfType<AudioManager>().Stop("Bosc");
+        FindObjectOfType<AudioManager>().Stop("BoscMusic");
         FindObjectOfType<AudioManager>().Play("VentArtic");
+        FindObjectOfType<AudioManager>().Play("ArticMusic");
     }
 
     public void lvl21(string lvl21)
@@ -197,6 +209,7 @@ public class MainMenu : MonoBehaviour {
 
         SceneManager.LoadScene(lvl21);
         FindObjectOfType<AudioManager>().Stop("Tema1");
+        FindObjectOfType<AudioManager>().Play("ArticMusic");
         FindObjectOfType<AudioManager>().Play("VentArtic");
     }
 
@@ -206,6 +219,7 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene(lvl22);
         FindObjectOfType<AudioManager>().Stop("Tema1");
         FindObjectOfType<AudioManager>().Play("VentArtic");
+        FindObjectOfType<AudioManager>().Play("ArticMusic");
     }
 
     public void lvl23(string lvl23)
@@ -214,6 +228,7 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene(lvl23);
         FindObjectOfType<AudioManager>().Stop("Tema1");
         FindObjectOfType<AudioManager>().Play("VentArtic");
+        FindObjectOfType<AudioManager>().Play("ArticMusic");
     }
 
     public void lvl24(string lvl24)
@@ -222,6 +237,7 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene(lvl24);
         FindObjectOfType<AudioManager>().Stop("Tema1");
         FindObjectOfType<AudioManager>().Play("VentArtic");
+        FindObjectOfType<AudioManager>().Play("ArticMusic");
     }
 
     public void lvl25(string lvl25)
@@ -230,6 +246,7 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene(lvl25);
         FindObjectOfType<AudioManager>().Stop("Tema1");
         FindObjectOfType<AudioManager>().Play("VentArtic");
+        FindObjectOfType<AudioManager>().Play("ArticMusic");
     }
 
     public void lvl26(string lvl26)
@@ -238,6 +255,7 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene(lvl26);
         FindObjectOfType<AudioManager>().Stop("Tema1");
         FindObjectOfType<AudioManager>().Play("VentArtic");
+        FindObjectOfType<AudioManager>().Play("ArticMusic");
     }
 
     public void lvl27(string lvl27)
@@ -246,6 +264,7 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene(lvl27);
         FindObjectOfType<AudioManager>().Stop("Tema1");
         FindObjectOfType<AudioManager>().Play("VentArtic");
+        FindObjectOfType<AudioManager>().Play("ArticMusic");
     }
 
     public void lvl28(string lvl28)
@@ -254,6 +273,7 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene(lvl28);
         FindObjectOfType<AudioManager>().Stop("Tema1");
         FindObjectOfType<AudioManager>().Play("VentArtic");
+        FindObjectOfType<AudioManager>().Play("ArticMusic");
     }
 
     public void lvl29(string lvl29)
@@ -262,13 +282,17 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene(lvl29);
         FindObjectOfType<AudioManager>().Stop("Tema1");
         FindObjectOfType<AudioManager>().Play("VentArtic");
+        FindObjectOfType<AudioManager>().Play("ArticMusic");
     }
 
     public void mainMenu(string MainMenu){
 
 		SceneManager.LoadScene (MainMenu);
-		FindObjectOfType<AudioManager>().Stop("Bosc");
+        FindObjectOfType<AudioManager>().Stop("BoscMusic");
+        FindObjectOfType<AudioManager>().Stop("Bosc");
+        FindObjectOfType<AudioManager>().Stop("ArticMusic");
         FindObjectOfType<AudioManager>().Stop("VentArtic");
+        FindObjectOfType<AudioManager>().Stop("Tema2");
         FindObjectOfType<AudioManager>().Play("Tema1");
 	}
 
