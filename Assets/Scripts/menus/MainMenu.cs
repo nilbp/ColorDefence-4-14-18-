@@ -16,7 +16,15 @@ public class MainMenu : MonoBehaviour {
 		SceneManager.LoadScene (options);
 
 	}
-	public void lvlSelectBtn(string lvlSelector){
+
+    public void creditos(string creditos)
+    {
+
+        SceneManager.LoadScene(creditos);
+
+    }
+
+    public void lvlSelectBtn(string lvlSelector){
 
 		SceneManager.LoadScene (lvlSelector);
 

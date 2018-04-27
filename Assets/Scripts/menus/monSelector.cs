@@ -17,12 +17,12 @@ public class monSelector : MonoBehaviour {
 
     void Start () 
 	{
-        PlayerPrefs.SetInt("levelReached", 30);
+        PlayerPrefs.SetInt("levelReached", 25);
 
         levelReached = PlayerPrefs.GetInt ("levelReached");
 
         for (int i = 0; i < levelButtons.Length; i++) {
-            if (i < levelReached)
+            if (i-1 < levelReached)
             {
                 if (levelButtons[i] != null)
                 {
@@ -34,8 +34,8 @@ public class monSelector : MonoBehaviour {
 
         if (levBosc != null && levIce != null)
         {
-            if (levelReached > 10) levBosc.gameObject.SetActive(false);
-            if (levelReached > 20) levIce.gameObject.SetActive(false);              
+            if (levelReached >= 10) levBosc.gameObject.SetActive(false);
+            if (levelReached >= 20) levIce.gameObject.SetActive(false);              
         }
     }
 	
